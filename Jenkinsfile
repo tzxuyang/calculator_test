@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout([$class, branches: [[name: '*/master']] ])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tzxuyang/calculator_test']] ])
             }
         stage('Build') {
             steps {
@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python main.py'
+                sh 'python'
             }
         }
 
