@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git branch: '*/master', url: 'https://github.com/tzxuyang/calculator_test'
+                // git branch: '*/master', url: 'https://github.com/tzxuyang/calculator_test'
                 sh 'python main.py'
             }
         }
