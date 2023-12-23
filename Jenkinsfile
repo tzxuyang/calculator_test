@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "run python main code"
-                sh 'python3 main.py'
+                sh 'python3 test.py'
             }
         }
 
