@@ -11,7 +11,7 @@ pipeline {
         stage('Install'){
             steps {
                 echo "install default lib"
-                sh "pip install pandas"
+                sh "apt install python3-pandas"
             }
         }
         stage('Build') {
