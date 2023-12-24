@@ -11,7 +11,9 @@ pipeline {
         stage('Install'){
             steps {
                 echo "install default lib"
-                sh "pip3 install pandas"
+                sh "pyhton3 -m venv path/to/venv"
+                sh "path/to/venv/bin/pip3 install pandas"
+                // sh "pip3 install pandas"
             }
         }
         stage('Build') {
