@@ -8,6 +8,12 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/tzxuyang/calculator_test']] ])
             }
         }
+        stage('Install'){
+            steps {
+                echo "install default lib"
+                sh "pip install pandas"
+            }
+        }
         stage('Build') {
             steps {
                 // git branch: '*/master', url: 'https://github.com/tzxuyang/calculator_test'
